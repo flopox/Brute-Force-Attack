@@ -10,10 +10,10 @@ name = 'crackme.zip'
 # ↓↓↓↓↓ Does it include any exclamation signs? ↓↓↓↓↓
 # ↓↓↓↓↓ ETC ↓↓↓↓↓
 # ↓↓↓↓↓ In this case, I know that the password consists of only numbers. ↓↓↓↓↓
-chars = '0123456789'
+chars = '0123456789abcdefghijqlmnñopqrstuvwxz'
 
 # ↓↓↓↓↓ Here, introduce the quantity of characters the password may have. ↓↓↓↓↓
-for guess in itertools.product(chars, repeat=5):
+for guess in itertools.product(chars, repeat=9):
      guess = ''.join(guess)
      print(guess)
      try:
@@ -22,4 +22,4 @@ for guess in itertools.product(chars, repeat=5):
              print(f'El archivo fue extraido con éxito. Contraseña {guess}')
              break
      except Exception as e:
-         print(f'Error al extraer el archivo: {e}')
+          pass
